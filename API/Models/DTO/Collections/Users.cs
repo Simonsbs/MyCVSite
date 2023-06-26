@@ -1,4 +1,4 @@
 ﻿namespace MyCVSite.API.Models.DTO.Collections {
-	public class Users {
+	public class Users : List<User> {
 	}
 }
