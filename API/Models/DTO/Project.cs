@@ -8,6 +8,6 @@ namespace MyCVSite.API.Models.DTO {
         public List<ProjectGalleryImage> GalleryImages { get; set; }
         public string URL { get; set; }
 		public string GitURL { get; set; }
-		public List<ProgrammingSkill> SkillsUsed { get; set; }
+		public List<ProgrammingSkill> Skills { get; set; }
     }
 }
