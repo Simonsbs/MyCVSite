@@ -12,6 +12,17 @@ builder.Services.AddDbContext<MainContext>(o => {
 
 // Add services to the container.
 
+builder.Services.AddScoped<ICommunicationRepository, CommunicationRepository>();
+builder.Services.AddScoped<IEducationRepository, EducationRepository>();
+builder.Services.AddScoped<IExperienceRepository, ExperienceRepository>();
+builder.Services.AddScoped<IGeneralRepository, GeneralRepository>();
+builder.Services.AddScoped<IHobbyRepository, HobbyRepository>();
+builder.Services.AddScoped<ILanguageRepository, LanguageRepository>();
+builder.Services.AddScoped<IPersonalAttributeRepository, PersonalAttributeRepository>();
+builder.Services.AddScoped<IProgrammingSkillRepository, ProgrammingSkillRepository>();
+builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
+builder.Services.AddScoped<IProjectGalleryImageRepository, ProjectGalleryImageRepository>();
+builder.Services.AddScoped<ISocialNetworkRepository, SocialNetworkRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddControllers();
