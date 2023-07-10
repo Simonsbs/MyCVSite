@@ -7,7 +7,7 @@ namespace MyCVSite.API.Models {
 		}
 
 		public List<Communication> Communications { get; private set; }
-		public List<Education> Educations { get; private set; }
+		public List<DTO.Education> Educations { get; private set; }
 		public List<Experience> Experiences { get; private set; }
 		public List<General> General { get; private set; }
 		public List<Hobby> Hobbies { get; private set; }

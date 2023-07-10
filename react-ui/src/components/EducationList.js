@@ -6,6 +6,19 @@ import { Link } from "react-router-dom";
 function EducationList() {
   const [items, setItems] = useState([]);
 
+  const handleDelete = (id) => {
+    if (!window.confirm("Are you sure?")) {
+      return;
+    }
+
+    api
+      .delete(`education/${id}`)
+      .then(() => {
+        setItems(items.filter((item) => item.id !== id));
+      })
+      .catch((ex) => console.error(ex));
+  };
+
   useEffect(() => {
     api
       .get("Education")
@@ -30,6 +43,7 @@ function EducationList() {
             <th>Started</th>
             <th>Ended</th>
             <th>Description</th>
+            <th>Skills</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -44,10 +58,19 @@ function EducationList() {
               </td>
               <td>{item.description}</td>
               <td>
+                {item.skills ? (
+                  items.skills.map((s) => s.name).join(" | ")
+                ) : (
+                  <>-</>
+                )}
+              </td>
+              <td>
                 <Button variant="info" as={Link} to={`edit/${item.id}`}>
                   Edit
                 </Button>
-                <Button variant="danger">Delete</Button>
+                <Button variant="danger" onClick={() => handleDelete(item.id)}>
+                  Delete
+                </Button>
               </td>
             </tr>
           ))}
